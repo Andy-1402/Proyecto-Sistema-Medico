@@ -1,0 +1,33 @@
+{% extends 'components/base.html' %}
+
+{% load static %}  <!-- Cargar la etiqueta static -->
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">Mi Perfil</h1>
+    <div class="card mt-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Información Personal</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    {% if usuario.perfil.foto %}
+                        <img src="{{ usuario.perfil.foto.url }}" alt="Foto de perfil" class="img-thumbnail rounded-circle mb-3" style="width: 150px; height: 150px;">
+                    {% else %}
+                        <img src="{% static 'img/usuario_anonimo.png' %}" alt="Foto de perfil" class="img-thumbnail rounded-circle mb-3" style="width: 150px; height: 150px;">
+                    {% endif %}
+                </div>
+                
+                <div class="col-md-8">
+                    <p><strong>Nombre Completo:</strong> {{ usuario.get_full_name }}</p>
+                    <p><strong>Correo Electrónico:</strong> {{ usuario.email }}</p>
+                    <p><strong>Tipo de Usuario:</strong> {{ perfil.get_tipo_usuario_display }}</p>
+                    <p><strong>Teléfono:</strong> {{ perfil.telefono }}</p>
+                    <p><strong>Dirección:</strong> {{ perfil.direccion }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
