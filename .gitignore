@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entorno virtual
+venv/
+env/
+ENV/
+
+# Django
+*.sqlite3
+db.sqlite3
+
+# Archivos de migraciones compiladas
+*/migrations/__pycache__/
+*/migrations/*.pyc
+
+# Archivos de configuración local y entorno
+.env
+.env.*
+
+# Archivos estáticos y media subidos
+media/
+staticfiles/
+
+# Editor de código
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+
+# Windows
+Thumbs.db
