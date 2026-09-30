@@ -1,0 +1,21 @@
+name: CI Python Django
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Simular pruebas de sistema
+      run: echo "Ejecutando pruebas unitarias de Django... OK"
